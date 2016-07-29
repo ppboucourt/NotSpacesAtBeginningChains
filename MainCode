@@ -1,0 +1,16 @@
+function eliminarEspaciosExtremos(field, mensaje) {
+				try {
+					if (typeof(field) == 'NodeList') {
+						for(var i=0; i < field.length; i++) {
+							eliminarEspaciosExtremos(field[i], mensaje);
+						}
+					} else {
+			             var myString = field.value;
+			             myString = jQuery.trim(myString);
+			             field.value = myString;
+					}
+					return true;
+				} catch (e) {
+					return true;
+				}
+			}
